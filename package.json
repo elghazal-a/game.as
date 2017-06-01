@@ -7,13 +7,22 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/**/*.js && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/geniousphp/game.as.git"
+    "url": "git@github.com:geniousphp/game.as.git"
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/geniousphp/game.as#readme"
+  "homepage": "https://github.com/geniousphp/game.as",
+  "dependencies": {
+    "async": "~1.5.2",
+    "lodash": "~4.11.1",
+    "request": "~2.79.0"
+  },
+  "devDependencies": {
+    "should": "~7.1.1",
+    "sinon": "~1.17.7"
+  }
 }
