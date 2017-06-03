@@ -161,6 +161,23 @@ module.exports = function (Rsmq, Trueskill, io, GameUrl) {
     }
   }
 
+  Game.prototype.askCards = function (players, socketID) {
+    var indexSeat = this.players.playerExistBySocketID(socketID)
+    if (indexSeat > -1) {
+      return {
+        err: null,
+        isPlayer: true,
+        hand: this.players.players[indexSeat].hand
+      }
+    } else {
+      return {
+        err: null,
+        isPlayer: false,
+        handLength: this.players.players[0].hand.length
+      }
+    }
+  }
+
   Game.prototype.rematch = function (socketID) {
     var self = this
     if (this.stateGame.endGame === false) {
